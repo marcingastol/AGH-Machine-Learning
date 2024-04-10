@@ -2,7 +2,7 @@
 
 Go to https://portal.azure.com/
 
-![Alt text](.img/0_0/01.png)
+![Alt text](.img//0_0//01.png)
 
 ![Alt text](.img\0_0\02.png)
 
