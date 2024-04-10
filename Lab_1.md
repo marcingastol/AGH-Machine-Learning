@@ -17,9 +17,9 @@ The Azure Machine Learning workspace acts as a central hub for all resources and
 
 1. Sign in to [Azure Portal](https://portal.azure.com/).
 
-![Alt text](.img\1\1.png)
+![Alt text](.img//1//1.png)
 
-![Alt text](.img\1\2.png)
+![Alt text](.img//1//2.png)
 
 2. Create a new Azure Machine Learning resource with the following configurations:
 
@@ -38,13 +38,13 @@ The Azure Machine Learning workspace acts as a central hub for all resources and
    - **Application Insights**: Note the default new application insights resource created for your workspace
    - **Container Registry**: Set to None (automatically created upon first model deployment to a container)
 
-![Alt text](.img\1\3.png)
+![Alt text](.img//1//3.png)
 
-![Alt text](.img\1\4.png)
+![Alt text](.img//1//4.png)
 
-![Alt text](.img\1\5.png)
+![Alt text](.img//1//5.png)
 
-![Alt text](.img\1\6.png)
+![Alt text](.img//1//6.png)
 
 3. Await the creation of the workspace and its associated resources, typically around 5 minutes.
    - **Note**: Advanced options for private endpoint access and custom data encryption keys are available but not utilized in this exercise.
@@ -57,12 +57,12 @@ Azure Machine Learning Studio is a web-based portal that provides access to the 
 
 1. Navigate to the resource group created by you.
 
-![Alt text](.img\1\7.png)
-![Alt text](.img\1\8.png)
+![Alt text](.img//1//7.png)
+![Alt text](.img//1//8.png)
 
 2. Ensure the resource group includes your Azure Machine Learning workspace, Application Insights, a Key Vault and a Storage Account.
 
-![Alt text](.img\1\9.png)
+![Alt text](.img//1//9.png)
 
 3. Select your Azure Machine Learning workspace.
 
@@ -70,7 +70,7 @@ Azure Machine Learning Studio is a web-based portal that provides access to the 
 
 1. Click on `Launch studio` from the Overview page. This action will open a new tab in your browser to access the Azure Machine Learning Studio.
 
-![Alt text](.img\1\10.png)
+![Alt text](.img//1//10.png)
 
 2. Close any pop-ups that may appear in the studio.
 
@@ -93,7 +93,7 @@ Azure Machine Learning Studio is a web-based portal that provides access to the 
 
 4. Review the **Manage** section, which includes Compute among other resources. These are essential infrastructural components required for training or deploying a machine learning model.
 
-![Alt text](.img\1\11.png)
+![Alt text](.img//1//11.png)
 
 # Authoring a Training Pipeline
 
@@ -105,11 +105,11 @@ Exploring asset and resource use within the Azure Machine Learning workspace can
 
 1. Navigate to the **Designer** page via the menu on the left side of the studio.
 
-![Alt text](.img\1\12.png)
+![Alt text](.img//1//12.png)
 
 2. Select the **Regression - Automobile Price Prediction (Basic)** sample.
 
-![Alt text](.img\1\13.png)
+![Alt text](.img//1//13.png)
 
 This action generates a new pipeline. Initially, a component loads raw automobile price data. Subsequently, the pipeline processes this data and employs a linear regression model to forecast prices for each automobile.
 
@@ -117,19 +117,19 @@ This action generates a new pipeline. Initially, a component loads raw automobil
 
 1. Click **Configure & Submit** at the top of the page to initiate the *Set up pipeline job* dialogue.
 
-![Alt text](.img\1\14.png)
+![Alt text](.img//1//14.png)
 
 2. On the **Basics** page, opt to **Create new** and designate the experiment's name as `train-regression-designer`, then click **Next**.
 
-![Alt text](.img\1\15.png)
+![Alt text](.img//1//15.png)
 
 3. Proceed to **Next** on the **Inputs & outputs** page without altering any settings.
 
-![Alt text](.img\1\16.png)
+![Alt text](.img//1//16.png)
 
 4. Upon reaching the **Runtime settings** page, you might encounter an error due to the absence of a default compute required to execute the pipeline.
 
-![Alt text](.img\1\17.png)
+![Alt text](.img//1//17.png)
 
 # Creating a Compute Target
 
@@ -141,7 +141,7 @@ In the Azure Machine Learning studio:
 
 1. Navigate to the **Compute** page via the menu on the left side.
 
-![Alt text](.img\1\18.png)
+![Alt text](.img//1//18.png)
 
 
 ### Types of Compute Resources
@@ -159,7 +159,7 @@ For training a model using the Designer, select either a compute instance or clu
 
 1. Go to the **Compute instances** tab.
 
-![Alt text](.img\1\19.png)
+![Alt text](.img//1//19.png)
 
 2. Add a new compute instance with the following configurations:
    - **Compute Name:** Enter a unique identifier.
@@ -174,13 +174,13 @@ For training a model using the Designer, select either a compute instance or clu
      - **Provision with Setup Script:** Unselected, but useful for running a script on the remote instance upon creation.
      - **Assign a Managed Identity:** Unselected, but available for attaching system assigned or user assigned managed identities to access resources.
 
-![Alt text](.img\1\20.png)
+![Alt text](.img//1//20.png)
 
 3. Click **Create** and wait for the compute instance to initialize and transition to **Running** state.
 
-![Alt text](.img\1\21.png)
+![Alt text](.img//1//21.png)
 
-![Alt text](.img\1\22.png)
+![Alt text](.img//1//22.png)
 
 
 # Running Your Training Pipeline
@@ -192,35 +192,35 @@ After setting up a compute target, you are ready to execute your sample training
 1. **Access the Designer**:
    - Navigate to the **Designer** page within the Azure Machine Learning studio.
 
-![Alt text](.img\1\12.png)
+![Alt text](.img//1//12.png)
 
 2. **Select the Pipeline**:
    - Choose the **Regression - Automobile Price Prediction (basic)** pipeline draft from the list.
 
-![Alt text](.img\1\13.png)
+![Alt text](.img//1//13.png)
 
 3. **Configure & Submit**:
    - Click on **Configure & Submit** at the top of the page to initiate the *Set up pipeline job* dialogue.
 
-![Alt text](.img\1\14.png)
+![Alt text](.img//1//14.png)
 
 4. **Set Experiment Details**:
    - On the **Basics** page, click **Create new** and name the experiment `train-regression-designer`, then select **Next**.
    - Proceed by selecting **Next** on the **Inputs & outputs** page without altering any settings.
 
-![Alt text](.img\1\15.png)
+![Alt text](.img//1//15.png)
 
 5. **Select Compute Target**:
    - In the **Runtime settings** section, use the **Select compute type** drop-down to choose **Compute instance**.
    - From the **Select Azure ML compute instance** drop-down, pick the compute instance you previously created.
 
-![Alt text](.img\1\23.png)
+![Alt text](.img//1//23.png)
 
 6. **Submission**:
    - Click **Review + Submit** to overview the pipeline job settings.
    - Confirm by selecting **Submit** to initiate the training pipeline execution.
 
-![Alt text](.img\1\24.png)
+![Alt text](.img//1//24.png)
 
 The submission triggers the training process on the specified compute instance, expected to conclude in roughly 10 minutes. While waiting, consider exploring additional features and pages within the studio.
 
@@ -234,7 +234,7 @@ In the Azure Machine Learning workspace, every script or pipeline execution is r
 1. **Navigate to Jobs**:
    - Use the menu on the left side of the Azure Machine Learning studio to find and click on the **Jobs** page.
 
-![Alt text](.img\1\25.png)
+![Alt text](.img//1//25.png)
 
 2. **Select an Experiment**:
    - Choose the `train-regression-designer` experiment to review its job runs. This provides an overview of all jobs within the experiment, offering a comparison point for multiple training pipelines to determine the most effective one.
@@ -242,7 +242,7 @@ In the Azure Machine Learning workspace, every script or pipeline execution is r
 3. **Review Job Details**:
    - Click on the most recent job listed under the `train-regression-designer` experiment to examine its components, identifying which have succeeded or failed. For ongoing jobs, you can track current progress.
 
-![Alt text](.img\1\26.png)
+![Alt text](.img//1//26.png)
 
 4. **Expand Job Overview**:
    - For detailed insights, select the **Job overview** button at the top right to access the Pipeline job overview.
